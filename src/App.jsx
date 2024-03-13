@@ -90,7 +90,6 @@ export default function App() {
   return (
     <CacheProvider value={rtl ? rtlCache : ltrCache}>
     <ThemeProvider theme={theme}>
-    <>
         <Box sx={{ display: "flex" }}>
           <CssBaseline />
       
@@ -108,7 +107,6 @@ export default function App() {
             </Box>
       
         </Box>
-    </>
     </ThemeProvider>
 </CacheProvider>
   );

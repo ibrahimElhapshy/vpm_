@@ -13,13 +13,13 @@ import Dashboard from './pages/dashboard/Dashboard';
 import Team from './pages/team/Team';
 import Contacts from './pages/contacts/Contacts';
 import Invoices from './pages/invoices/Invoices';
-import Form from './pages/form/Form';
-import Calendar from './pages/calendar/Calendar';
-import BarChart from './pages/barChart/BarChart';
-import FAQ from './pages/faq/FAQ';
-import PieChart from './pages/pieChart/PieChart';
-import LineChart from './pages/lineChart/LineChart';
-import Geography from './pages/geography/Geography';
+// import Form from './pages/form/Form';
+// import Calendar from './pages/calendar/Calendar';
+// import BarChart from './pages/barChart/BarChart';
+// import FAQ from './pages/faq/FAQ';
+// import PieChart from './pages/pieChart/PieChart';
+// import LineChart from './pages/lineChart/LineChart';
+// import Geography from './pages/geography/Geography';
 import NotFound from './pages/notFound/NotFound';
 import  Login  from './pages/login/Login';
 
@@ -44,13 +44,13 @@ const router = createBrowserRouter(
       <Route path={"team"} element={ <Team /> } />
       <Route path={"contacts"} element={ <Contacts /> } />
       <Route path={"invoices"} element={ <Invoices /> } />
-      <Route path={"form"} element={ <Form /> } />
+      {/* <Route path={"form"} element={ <Form /> } />
       <Route path={"calendar"} element={ <Calendar /> } />
       <Route path={"bar"} element={ <BarChart /> } />
       <Route path={"faq"} element={ <FAQ /> } />
       <Route path={"pie"} element={ <PieChart /> } />
       <Route path={"line"} element={ <LineChart /> } />
-      <Route path={"geography"} element={ <Geography /> } />
+      <Route path={"geography"} element={ <Geography /> } /> */}
     
     
     <Route path= {"*"}  element={ <NotFound /> } />

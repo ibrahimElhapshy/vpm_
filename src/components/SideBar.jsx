@@ -15,13 +15,13 @@ import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
 import ContactsOutlinedIcon from "@mui/icons-material/ContactsOutlined";
 import ReceiptOutLinedIcon from "@mui/icons-material/ReceiptOutLined";
-import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
-import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
-import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
-import TimeLineOutlinedIcon from "@mui/icons-material/TimeLineOutlined";
-import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
-import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
-import PieChartOutlinedIcon from "@mui/icons-material/PieChartOutlined";
+// import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
+// import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
+// import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
+// import TimeLineOutlinedIcon from "@mui/icons-material/TimeLineOutlined";
+// import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
+// import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
+// import PieChartOutlinedIcon from "@mui/icons-material/PieChartOutlined";
 
 import MuiDrawer from "@mui/material/Drawer";
 import Typography from "@mui/material/Typography";
@@ -113,46 +113,46 @@ const Arr1 = [
   },
 ];
 
-const Arr2 = [
-  {
-    text: "Profile Form",
-    icon: <PersonOutlinedIcon />,
-    path: "/form",
-  },
-  {
-    text: "Calendar",
-    icon: <CalendarTodayOutlinedIcon />,
-    path: "/calendar",
-  },
-  {
-    text: "FAQ Page",
-    icon: <HelpOutlineOutlinedIcon />,
-    path: "/faq",
-  },
-];
+// const Arr2 = [
+//   {
+//     text: "Profile Form",
+//     icon: <PersonOutlinedIcon />,
+//     path: "/form",
+//   },
+//   {
+//     text: "Calendar",
+//     icon: <CalendarTodayOutlinedIcon />,
+//     path: "/calendar",
+//   },
+//   {
+//     text: "FAQ Page",
+//     icon: <HelpOutlineOutlinedIcon />,
+//     path: "/faq",
+//   },
+// ];
 
-const Arr3 = [
-  {
-    text: "Bar Chart",
-    icon: <BarChartOutlinedIcon />,
-    path: "/bar",
-  },
-  {
-    text: "Pie Chart",
-    icon: <PieChartOutlinedIcon />,
-    path: "/pie",
-  },
-  {
-    text: "Line Chart",
-    icon: <TimeLineOutlinedIcon />,
-    path: "/line",
-  },
-  {
-    text: "Geography Chart",
-    icon: <MapOutlinedIcon />,
-    path: "/geography",
-  },
-];
+// const Arr3 = [
+//   {
+//     text: "Bar Chart",
+//     icon: <BarChartOutlinedIcon />,
+//     path: "/bar",
+//   },
+//   {
+//     text: "Pie Chart",
+//     icon: <PieChartOutlinedIcon />,
+//     path: "/pie",
+//   },
+//   {
+//     text: "Line Chart",
+//     icon: <TimeLineOutlinedIcon />,
+//     path: "/line",
+//   },
+//   {
+//     text: "Geography Chart",
+//     icon: <MapOutlinedIcon />,
+//     path: "/geography",
+//   },
+// ];
 
 
 
@@ -260,7 +260,7 @@ useEffect(() => {
 
       <Divider />
 
-      <List>
+      {/* <List>
         {Arr2.map((item) => (
           <ListItem key={item.path} disablePadding sx={{ display: "block" }}>
             <Tooltip title={open ? null : item.text} placement= {localStorage.getItem('i18nextLng')==="ar"?"right":"left"}>
@@ -327,7 +327,7 @@ useEffect(() => {
             </Tooltip>
           </ListItem>
         ))}
-      </List>
+      </List> */}
     </Drawer>
   );
 };

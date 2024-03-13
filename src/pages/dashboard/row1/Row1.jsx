@@ -13,7 +13,7 @@ const Row1 = () => {
     return (
       <Stack
       pt={3}
-        direction={"row"}
+        direction={{ xs:"column",md:"row"}}
         flexWrap={"wrap"}
         gap={1}
         justifyContent={{ xs: "center", sm: "space-between" }}

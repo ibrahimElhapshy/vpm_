@@ -9,13 +9,13 @@ import { ResponsivePie } from '@nivo/pie'
 
 
 
+// eslint-disable-next-line react/prop-types
 const Card = ({icon, title, subTitle, increase, data, scheme }) => {
   const theme = useTheme();
   return (
     <Paper
         sx={{
           flexGrow: 1,
-          minWidth: "300px",
           p: 1.5,
           display: "flex",
           justifyContent: "space-between",
