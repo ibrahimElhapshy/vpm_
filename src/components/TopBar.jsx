@@ -3,9 +3,8 @@ import Toolbar from "@mui/material/Toolbar";
 import { Stack, Box } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import MuiAppBar from "@mui/material/AppBar";
-import { styled, alpha, useTheme } from "@mui/material";
-import SearchIcon from "@mui/icons-material/Search";
-import InputBase from "@mui/material/InputBase";
+import { styled, useTheme } from "@mui/material";
+
 import Person2OutlinedIcon from "@mui/icons-material/Person2Outlined";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";

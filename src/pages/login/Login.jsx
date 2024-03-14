@@ -19,7 +19,7 @@ import "../../index.css";
 
 import axios from "axios";
 
-const baseURL = "https://backend.profitsway.net/erp/public/api";
+const baseURL = "https://portal.profitsway.net/New_Parking/public/api";
 
 function Copyright(props) {
   return (
@@ -63,8 +63,8 @@ const Login = () => {
     const token = res.data.data.token;
     const name = res.data.data.name;
   
-    localStorage.setItem("token", token);
-    localStorage.setItem("name", name);
+    sessionStorage.setItem("token", token);
+    sessionStorage.setItem("name", name);
 
     
 

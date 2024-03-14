@@ -1,6 +1,6 @@
 import { Stack, Paper, Typography, useTheme } from "@mui/material";
 import Pie from '../../pieChart/Pie';
-import Bar from '../../barChart/Bar';
+import Bar from '../../admin/Bar';
 import GEO from './../../geography/GEO';
 
 const Row3 = () => {

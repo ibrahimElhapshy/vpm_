@@ -13,8 +13,8 @@ import ListItemText from "@mui/material/ListItemText";
 // import MailIcon from '@mui/icons-material/Mail';
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
-import ContactsOutlinedIcon from "@mui/icons-material/ContactsOutlined";
-import ReceiptOutLinedIcon from "@mui/icons-material/ReceiptOutLined";
+// import ContactsOutlinedIcon from "@mui/icons-material/ContactsOutlined";
+// import ReceiptOutLinedIcon from "@mui/icons-material/ReceiptOutLined";
 // import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 // import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
 // import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
@@ -33,7 +33,7 @@ import cookies from "js-cookie";
 import { useEffect } from "react";
 // import "../../i18next";
 
-const userName = localStorage.getItem('name')
+const userName = sessionStorage.getItem('name')
 
 const drawerWidth = 240;
 
@@ -97,20 +97,20 @@ const Arr1 = [
     path: "/",
   },
   {
-    text: "Manage Team",
+    text: "Admins",
     icon: <PeopleOutlinedIcon />,
-    path: "/team",
+    path: "admin",
   },
-  {
-    text: "Contacts Information",
-    icon: <ContactsOutlinedIcon />,
-    path: "/contacts",
-  },
-  {
-    text: "Invoices Balances",
-    icon: <ReceiptOutLinedIcon />,
-    path: "/invoices",
-  },
+  // {
+  //   text: "Contacts Information",
+  //   icon: <ContactsOutlinedIcon />,
+  //   path: "/contacts",
+  // },
+  // {
+  //   text: "Invoices Balances",
+  //   icon: <ReceiptOutLinedIcon />,
+  //   path: "/invoices",
+  // },
 ];
 
 // const Arr2 = [

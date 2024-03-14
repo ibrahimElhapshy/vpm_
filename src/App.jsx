@@ -85,11 +85,12 @@ export default function App() {
       : "light"
   );
 
-  const theme = React.useMemo(() => createTheme(getDesignTokens(mode),{ direction: 'ltr'},), [mode]);
+  const theme = React.useMemo(() => createTheme(getDesignTokens(mode),{ direction: 'rtl'},), [mode]);
 
   return (
     <CacheProvider value={rtl ? rtlCache : ltrCache}>
     <ThemeProvider theme={theme}>
+    <>
         <Box sx={{ display: "flex" }}>
           <CssBaseline />
       
@@ -107,6 +108,7 @@ export default function App() {
             </Box>
       
         </Box>
+    </>
     </ThemeProvider>
 </CacheProvider>
   );
