@@ -1,18 +1,19 @@
 import { Box } from '@mui/material';
-import { Audio,ThreeCircles } from 'react-loader-spinner'
+import { ThreeCircles } from 'react-loader-spinner'
 
 const Loader = () => {
   return (
     <Box className="loading" sx={{
     justifyContent:"center",
+    alignItems:"center",
         textAlign: "center",
-        marginTop: "200px",
-        marginLeft: "40%",
+        marginTop: "150px",
+        marginLeft: "45%",
     
     }}>
       <ThreeCircles
-  height="100"
-  width="100"
+  height="200"
+  width="200"
   color="#42a5f5"
   ariaLabel="Loading"
 
