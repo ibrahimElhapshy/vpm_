@@ -17,7 +17,6 @@ import LanguageDetector from "i18next-browser-languagedetector";
 import HttpApi from "i18next-http-backend";
 import { useEffect } from "react";
 import cookies from "js-cookie";
-import "../../i18next";
 
 
 //start i18next language
@@ -88,20 +87,31 @@ const TopBar = ({ open, handleDrawerOpen, setMode , setRtl,}) => {
   const lng = cookies.get("i18next") || "ar"
 
   useEffect(() => {
-  window.document.dir = i18n.dir()
+    const directionRtl=() => {
+      i18n.changeLanguage("ar")
+      setRtl(!rtl);
+  
+    }
+    const directionLtr=() => {
+      i18n.changeLanguage("en")
+      setRtl(rtl);
+    }
+
+
+  window.document.dir= theme.direction = i18n.dir()
   localStorage.getItem('i18nextLng')==="ar"?directionRtl():directionLtr()
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [lng, i18n]);
+  }, [lng, i18n, localStorage.getItem('i18nextLng')]);
 
   const directionRtl=() => {
     i18n.changeLanguage("ar")
-    setRtl(!rtl);
+    setRtl(rtl);
 
   }
   const directionLtr=() => {
     i18n.changeLanguage("en")
-    setRtl(rtl);
+    setRtl(!rtl);
   }
   
 
@@ -141,7 +151,7 @@ const TopBar = ({ open, handleDrawerOpen, setMode , setRtl,}) => {
             {t("AR")}
           </IconButton>
           <IconButton aria-label="delete" color="inherit" size="small"
-          sx={{display: localStorage.getItem('i18nextLng')==="ar"? "flex": "none"}}
+          sx={{display: localStorage.getItem('i18nextLng') ==="ar"? "flex": "none"}}
             onClick={directionLtr}>
             {t("EN")}
           </IconButton>

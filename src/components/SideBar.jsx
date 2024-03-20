@@ -99,7 +99,7 @@ const Arr1 = [
   {
     text: "Admins",
     icon: <PeopleOutlinedIcon />,
-    path: "admin",
+    path: "/admin",
   },
   // {
   //   text: "Contacts Information",
@@ -186,18 +186,20 @@ useEffect(() => {
       </DrawerHeader>
       <Divider />
       <Avatar
+      className="side_shadow"
         sx={{
           transition: "0.25s",
           mx: "auto",
-          width: open ? 88 : 43,
-          height: open ? 88 : 43,
+          width: open ? 130 : 50,
+          height: open ? 95 : 43,
+          borderRadius:"5px",
           my: 1,
-          border: "2px solid gray",
+          // border: "2px solid gray",
         }}
         alt="profile"
-        src="../../src/images/profile.jpg"
+        src="../../src/images/logo.png"
       />
-      <Typography
+      {/* <Typography
         align="center"
         sx={{
           fontSize: open ? 17 : 0,
@@ -205,17 +207,8 @@ useEffect(() => {
         }}
       >
         {userName}
-      </Typography>
-      <Typography
-        align="center"
-        sx={{
-          fontSize: open ? 14 : 0,
-          transition: "0.25s",
-          color: theme.palette.info.main,
-        }}
-      >
-        admin
-      </Typography>
+      </Typography> */}
+      
 
       <Divider />
 
@@ -224,6 +217,7 @@ useEffect(() => {
           <ListItem key={item.path} disablePadding sx={{ display: "block" }}>
             <Tooltip title={open ? null : item.text} placement={localStorage.getItem('i18nextLng')==="ar"?"right":"left"}>
               <ListItemButton
+              className="side_shadow"
                 onClick={() => {
                   navigate(item.path);
                 }}
@@ -234,9 +228,18 @@ useEffect(() => {
                   bgcolor:
                     location.pathname === item.path
                       ? theme.palette.mode === "dark"
-                        ? grey[700]
-                        : grey[300]
+                        ? grey[800]
+                        : grey[200]
                       : null,
+                      color:
+                      location.pathname === item.path
+                        ? theme.palette.mode === "dark"
+                          ? // @ts-ignore
+                            theme.palette.primary.dark
+                          : // @ts-ignore
+                          theme.palette.primary.dark
+                        : null,
+                        mt:1
                 }}
               >
                 <ListItemIcon
@@ -244,6 +247,14 @@ useEffect(() => {
                     minWidth: 0,
                     mr: open ? 3 : "auto",
                     justifyContent: "center",
+                    color:
+                    location.pathname === item.path
+                      ? theme.palette.mode === "dark"
+                        ? // @ts-ignore
+                          theme.palette.primary.dark
+                        : // @ts-ignore
+                        theme.palette.primary.dark
+                      : null,
                   }}
                 >
                   {item.icon}

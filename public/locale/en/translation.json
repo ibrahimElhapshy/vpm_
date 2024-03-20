@@ -1,4 +1,10 @@
 {
-  "Welcome to React": "Welcome to React and react-i18next",
-  "AddNewAdmin": "Add New Admin"
+
+  "Dashboard": "Dashboard",
+
+  "Name": "Name",
+  "email": "email",
+  "PhoneNumber": "Phone Number",
+  "CreateAt": "Create At",
+  "Actions": "Actions"
 }

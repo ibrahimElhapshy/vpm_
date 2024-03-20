@@ -24,6 +24,7 @@ import TextField from "@mui/material/TextField";
 import { IconButton } from "@mui/material";
 
 import HeaderTitle from "../../components/Header";
+import Loader from "../loader/Loader";
 
 const baseURL = "https://portal.profitsway.net/New_Parking/public/api";
 
@@ -33,7 +34,6 @@ const reqHeader = {
     "Content-Type": "application/json",
     Accept: "application/json",
     Authorization: "Bearer " + TOKEN,
-    
   },
 };
 
@@ -43,6 +43,8 @@ export const Admin = () => {
   const theme = useTheme();
 
   const [row, setRow] = useState([]);
+  const [loading, setLoading] = useState(true);
+
 
 
   const columns = [
@@ -118,126 +120,126 @@ export const Admin = () => {
   ];
 
   useEffect(() => {
+  
     callApi();
   }, []);
 
   const callApi = async () => {
-    const res = await axios.get(
-      `${baseURL}/admin/admins/search`,
-      reqHeader
-    );
+    const res = await axios.get(`${baseURL}/admin/admins/search`, reqHeader);
     setRow(res.data.data);
     console.log(res.data.data);
     // setMeta(res.data.meta);
+    setTimeout(function () {
+      setLoading(false);
+    }, 1000);
   };
 
   return (
-    <Box sx={{ height: 600, width: "98%", mx: "auto" }}>
-      <Box
-        sx={{
-          textAlign: "center",
-          display: "flex",
-          mb: 5,
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
-        <HeaderTitle title={t("Admins")} subTitle={""} />
-        <Button
-          variant="contained"
-          size="small"
-          startIcon={<PersonAddRounded />}
+    <>
+      {loading && <Loader></Loader>}
+      {!loading && (
+      <Box sx={{ height: 600, width: "98%", mx: "auto" }}>
+      
+        <Box
           sx={{
             textAlign: "center",
             display: "flex",
-            // @ts-ignore
-            bgcolor: theme.palette.primary.dark,
+            mb: 0,
             justifyContent: "space-between",
             alignItems: "center",
           }}
         >
-          {t("AddNewAdmin")}
-        </Button>
-
-        {/* <Snackbar
-          anchorOrigin={{ vertical: "top", horizontal: "right" }}
-          open={OpenAlert}
-          autoHideDuration={5000}
-          onClose={handleClose}
-        >
-          <Alert onClose={handleClose} severity="info" sx={{ width: "100%" }}>
-            {message}
-          </Alert>
-        </Snackbar> */}
-      </Box>
-
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "row",
-          textAlign: "center",
-          alignItems: "center",
-          justifyContent: "space-between",
-        }}
-      >
-        <Stack
+          
+          <HeaderTitle title={t("Admins")} subTitle={""} />
+          <Button
+            variant="contained"
+            size="small"
+            startIcon={<PersonAddRounded />}
+            sx={{
+              textAlign: "center",
+              display: "flex",
+              mb: 3,
+              bgcolor: theme.palette.primary.dark,
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
+          >
+            {t("AddNewAdmin")}
+          </Button>
+      
+          {/* <Snackbar
+            anchorOrigin={{ vertical: "top", horizontal: "right" }}
+            open={OpenAlert}
+            autoHideDuration={5000}
+            onClose={handleClose}
+          >
+            <Alert onClose={handleClose} severity="info" sx={{ width: "100%" }}>
+              {message}
+            </Alert>
+          </Snackbar> */}
+        </Box>
+      
+        <Box
           sx={{
             display: "flex",
             flexDirection: "row",
-            gap: 1,
-            alignItems: "center",
-            width: "50%",
-            justifyContent: "center",
             textAlign: "center",
-            mt: 1,
+            alignItems: "center",
+            justifyContent: "space-between",
           }}
         >
-          <TextField
-            sx={{ m: "0.3px", borderLeft: "0px" }}
-            autoFocus
-            margin="dense"
-            id="search"
-            label={t("Search")}
-            type="text"
-            fullWidth
-            variant="standard"
-        
-          />
-
-          <IconButton
-            sx={{ width: "35px", height: "35px", bgcolor: "inhiret" }}
-            color="primary"
-            aria-label="search"
-            
+          <Stack
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              gap: 1,
+              alignItems: "center",
+              width: "50%",
+              justifyContent: "center",
+              textAlign: "center",
+              mt: 1,
+            }}
           >
-            <SearchIcon />
-          </IconButton>
-        </Stack>
-      </Box>
-
-      <DataGrid
-        sx={{ mt: 3 }}
-        rows={row.map((item) => {
-          return {
-            id: item.id,
-            name: item.name,
-            email: item.email,
-            phone: item.phone,
-            createAt: item.created_at,
-          };
-        })}
-        slots={{ toolbar: GridToolbar }}
-        // @ts-ignore
-        columns={columns}
-        autoHeight
-        hideFooter
-      />
-
-  
+            <TextField
+              sx={{ m: "0.3px", borderLeft: "0px" }}
+              autoFocus
+              margin="dense"
+              id="search"
+              label={t("Search")}
+              type="text"
+              fullWidth
+              variant="standard"
+            />
       
-
-  
-    </Box>
+            <IconButton
+              sx={{ width: "35px", height: "35px", bgcolor: "inhiret" }}
+              color="primary"
+              aria-label="search"
+            >
+              <SearchIcon />
+            </IconButton>
+          </Stack>
+        </Box>
+      
+        <DataGrid
+          sx={{ mt: 3 }}
+          rows={row.map((item) => {
+            return {
+              id: item.id,
+              name: item.name,
+              email: item.email,
+              phone: item.phone,
+              createAt: item.created_at,
+            };
+          })}
+          slots={{ toolbar: GridToolbar }}
+          // @ts-ignore
+          columns={columns}
+          autoHeight
+          hideFooter
+        />
+      </Box>)}
+    </>
   );
 };
 export default Admin;
